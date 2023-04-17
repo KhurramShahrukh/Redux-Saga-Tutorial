@@ -10,13 +10,15 @@ function App() {
 
   return (
     <div className="App">
+      <br /><br />
       <button onClick={() => counterSaga(actionTypes.INCREMENT)}>Increment</button>
       &nbsp;
       <button onClick={() => counterSaga(actionTypes.DECREMENT)}>Decrement</button>
-      <br />
+      <br /><br />
       <button onClick={() => asyncCounterSaga(actionTypes.INCREMENT)}>Async Increment</button>
       &nbsp;
       <button onClick={() => asyncCounterSaga(actionTypes.DECREMENT)}>Async Decrement</button>
+      <br /><br />
       <div>Counter Reducer: {count}</div>
     </div>
   );

@@ -6,7 +6,7 @@ export const delay = (ms) => new Promise(res => setTimeout(res, ms))
 
 export function* counterSaga(incrementType) {
     if (incrementType === actionTypes.INCREMENT) {
-        yield take(incrementAction())
+        yield takeLatest(incrementAction())
     } else if (incrementType === actionTypes.DECREMENT) {
         yield put(decrementAction())
     }
