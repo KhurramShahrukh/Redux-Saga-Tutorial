@@ -1,22 +1,13 @@
-import { applyMiddleware, combineReducers, createStore } from 'redux'
-import thunkMiddleware from 'redux-thunk'
-import { counterReducer } from './reducers'
-import { configureStore } from '@reduxjs/toolkit'
-import createSagaMiddleware from 'redux-saga'
-import rootSaga from './sagas'
+import {configureStore} from '@reduxjs/toolkit'
+import createSagaMiddleware from 'redux-saga';
+import rootReducer from './reducer/rootReducer';
 
-const rootReducer = combineReducers({ counterReducer })
+const sagaMiddleware = createSagaMiddleware();
+const store  = configureStore({
+    reducer:rootReducer,
+    middleware:()=>[sagaMiddleware]
+});
 
-// Create the saga middleware
-// const sagaMiddleware = createSagaMiddleware();
+sagaMiddleware.run();
 
-// Pass it as a middleware while creating the store
-const store = configureStore(
-    {reducer: rootReducer},
-    applyMiddleware(thunkMiddleware) 
-);
-
-// Then run the saga
-// sagaMiddleware.run(rootSaga);
-
-export default store
+export default store;
