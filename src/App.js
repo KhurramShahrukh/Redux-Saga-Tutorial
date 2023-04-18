@@ -3,6 +3,7 @@ import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { asyncCounterSaga, counterSaga } from './redux/sagas';
 import { actionTypes } from './redux/constants';
+import { decrementAction, incrementAction } from './redux/actions';
 
 function App() {
   const dispatch = useDispatch()
@@ -11,13 +12,13 @@ function App() {
   return (
     <div className="App">
       <br /><br />
-      <button onClick={() => counterSaga(actionTypes.INCREMENT)}>Increment</button>
+      <button onClick={() => dispatch(incrementAction())}>Increment</button>
       &nbsp;
-      <button onClick={() => counterSaga(actionTypes.DECREMENT)}>Decrement</button>
-      <br /><br />
+      <button onClick={() => dispatch(decrementAction())}>Decrement</button>
+      {/* <br /><br />
       <button onClick={() => asyncCounterSaga(actionTypes.INCREMENT)}>Async Increment</button>
       &nbsp;
-      <button onClick={() => asyncCounterSaga(actionTypes.DECREMENT)}>Async Decrement</button>
+      <button onClick={() => asyncCounterSaga(actionTypes.DECREMENT)}>Async Decrement</button> */}
       <br /><br />
       <div>Counter Reducer: {count}</div>
     </div>
