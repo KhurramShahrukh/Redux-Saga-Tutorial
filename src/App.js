@@ -12,12 +12,12 @@ const count = useSelector(state => state.counterReducer.count)
       <button onClick={() => dispatch(incrementCounter())}>Increment</button>
       &nbsp;
       <button onClick={() => dispatch(decrementCounter())}>Decrement</button>
-      &nbsp;
-      <button onClick={() => dispatch(resetCounter())}>Reset</button>
       <br /><br />
       <button onClick={() => dispatch(asyncIncrementCounter())}>Async Increment</button>
       &nbsp;
       <button onClick={() => dispatch(asyncDecrementCounter())}>Async Decrement</button>
+      <br /><br />
+      <button onClick={() => dispatch(resetCounter())}>Reset</button>
       <br /><br />
       <div>Counter Reducer: {count}</div>
     </div>
