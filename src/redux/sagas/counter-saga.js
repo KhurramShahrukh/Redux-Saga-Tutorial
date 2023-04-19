@@ -12,7 +12,7 @@ function* decrement() {
 
 function* counterSaga() {
     yield takeEvery(counterActionTypes.INCREMENT, increment)
-    yield takeEvery(counterActionTypes.INCREMENT, decrement)
+    yield takeEvery(counterActionTypes.DECREMENT, decrement)
 }
 
 export default counterSaga;

@@ -16,8 +16,8 @@ function* asyncDecrement() {
 }
 
 function* asyncCounterSaga() {
-    yield takeEvery(counterActionTypes.INCREMENT, asyncIncrement)
-    yield takeEvery(counterActionTypes.INCREMENT, asyncDecrement)
+    yield takeEvery(counterActionTypes.ASYNC_INCREMENT, asyncIncrement)
+    yield takeEvery(counterActionTypes.ASYNC_DECREMENT, asyncDecrement)
 }
 
 export default asyncCounterSaga;

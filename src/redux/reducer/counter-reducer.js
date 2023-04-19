@@ -18,6 +18,14 @@ export const counterReducer = (state = initialCounterState, { type, payload }) =
             state = { ...state, count: 0 }
             return state
 
+        case counterActionTypes.ASYNC_INCREMENT:
+            state = { ...state, count: state.count + payload }
+            return state
+
+        case counterActionTypes.ASYNC_DECREMENT:
+            state = { ...state, count: state.count - payload }
+            return state
+
         default:
             return state
     }

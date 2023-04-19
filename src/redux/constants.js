@@ -1,5 +1,7 @@
 export const counterActionTypes = {
     INCREMENT: "INCREMENT",
     DECREMENT: "DECREMENT",
-    RESET: "RESET"
+    RESET: "RESET",
+    ASYNC_INCREMENT: "ASYNC_INCREMENT",
+    ASYNC_DECREMENT: "ASYNC_DECREMENT"
 }
