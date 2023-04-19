@@ -19,7 +19,7 @@ const count = useSelector(state => state.counterReducer.count)
       <br /><br />
       <button onClick={() => dispatch(resetCounter())}>Reset</button>
       <br /><br />
-      <div>Counter Reducer: {count}</div>
+      <div>Counter: {count}</div>
     </div>
   );
 }
