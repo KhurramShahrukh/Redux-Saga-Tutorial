@@ -4,7 +4,7 @@ import asyncCounterSaga from "./async-counter-saga";
 
 export default function* rootSaga() {
     yield all([
-        counterSaga,
-        asyncCounterSaga
+        counterSaga(),
+        asyncCounterSaga()
     ])
 }

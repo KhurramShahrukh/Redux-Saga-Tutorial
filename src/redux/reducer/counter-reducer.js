@@ -1,32 +1,24 @@
-import { counterActionTypes } from '../constants'
+import { counterActionTypes } from "../constants";
 
 const initialCounterState = {
-    count: 0
-}
+  count: 0,
+};
 
-export const counterReducer = (state = initialCounterState, { type, payload }) => {
-    switch (type) {
-        case counterActionTypes.INCREMENT:
-            state = { ...state, count: state.count + payload }
-            return state
+export const counterReducer = (
+  state = initialCounterState,
+  { type, payload }
+) => {
+  switch (type) {
+    case counterActionTypes.INCREMENT:
+      return { ...state, count: state.count + payload };
 
-        case counterActionTypes.DECREMENT:
-            state = { ...state, count: state.count - payload }
-            return state
+    case counterActionTypes.DECREMENT:
+      return { ...state, count: state.count - payload };
 
-        case counterActionTypes.RESET:
-            state = { ...state, count: 0 }
-            return state
+    case counterActionTypes.RESET:
+      return { ...state, count: 0 };
 
-        case counterActionTypes.ASYNC_INCREMENT:
-            state = { ...state, count: state.count + payload }
-            return state
-
-        case counterActionTypes.ASYNC_DECREMENT:
-            state = { ...state, count: state.count - payload }
-            return state
-
-        default:
-            return state
-    }
-}
+    default:
+      return state;
+  }
+};
