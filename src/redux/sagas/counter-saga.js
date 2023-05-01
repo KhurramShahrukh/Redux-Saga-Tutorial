@@ -1,6 +1,6 @@
-import { decrementCounter, incrementCounter } from "../actions/counter-actions";
+import { decrementCounter, incrementCounter } from "../actions/reducer-counter-actions";
 import { put, takeEvery } from 'redux-saga/effects'
-import { counterActionTypes } from "../constants";
+import { counterSagaActionTypes } from "../constants";
 
 function* increment() {
     yield put(incrementCounter())
@@ -11,8 +11,8 @@ function* decrement() {
 }
 
 function* counterSaga() {
-    yield takeEvery(counterActionTypes.IMMEDIATE_INCREMENT, increment)
-    yield takeEvery(counterActionTypes.IMMEDIATE_DECREMENT, decrement)
+    yield takeEvery(counterSagaActionTypes.IMMEDIATE_INCREMENT, increment)
+    yield takeEvery(counterSagaActionTypes.IMMEDIATE_DECREMENT, decrement)
 }
 
 export default counterSaga;

@@ -1,4 +1,4 @@
-import { counterActionTypes } from "../constants";
+import { counterReducerActionTypes } from "../constants";
 
 const initialCounterState = {
   count: 0,
@@ -9,13 +9,13 @@ export const counterReducer = (
   { type, payload }
 ) => {
   switch (type) {
-    case counterActionTypes.INCREMENT:
+    case counterReducerActionTypes.INCREMENT:
       return { ...state, count: state.count + payload };
 
-    case counterActionTypes.DECREMENT:
+    case counterReducerActionTypes.DECREMENT:
       return { ...state, count: state.count - payload };
 
-    case counterActionTypes.RESET:
+    case counterReducerActionTypes.RESET:
       return { ...state, count: 0 };
 
     default:

@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { resetCounter } from "./redux/actions/counter-actions";
+import { resetCounter } from "./redux/actions/reducer-counter-actions";
 import {
   asyncDecrementCounter,
   asyncIncrementCounter,

@@ -1,21 +1,21 @@
-import { counterActionTypes } from '../constants'
+import { counterReducerActionTypes } from '../constants'
 
 export const incrementCounter = (value) => {
     return {
-        type: counterActionTypes.INCREMENT,
+        type: counterReducerActionTypes.INCREMENT,
         payload: value ?? 1
     }
 }
 
 export const decrementCounter = (value) => {
     return {
-        type: counterActionTypes.DECREMENT,
+        type: counterReducerActionTypes.DECREMENT,
         payload: value ?? 1
     }
 }
 
 export const resetCounter = () => {
     return {
-        type: counterActionTypes.RESET,
+        type: counterReducerActionTypes.RESET,
     }
 }
