@@ -1,4 +1,4 @@
-import { put, takeEvery } from "redux-saga/effects"
+import { put, takeEvery, takeLatest, takeLeading } from "redux-saga/effects"
 import { decrementCounter, incrementCounter } from "../actions/counter-actions"
 import { counterActionTypes } from "../constants"
 
@@ -16,7 +16,7 @@ function* asyncDecrement() {
 }
 
 function* asyncCounterSaga() {
-    yield takeEvery(counterActionTypes.ASYNC_INCREMENT, asyncIncrement)
+    yield takeLatest(counterActionTypes.ASYNC_INCREMENT, asyncIncrement) // this will reset the increment timer if you click async increment before it finishes
     yield takeEvery(counterActionTypes.ASYNC_DECREMENT, asyncDecrement)
 }
 
